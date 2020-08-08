@@ -1,7 +1,7 @@
 class Command:
-	"""
-	Base command class
-	"""
+    """
+    Base command class
+    """
 
     def initialize_arguments_parser(self, parser):
         """
