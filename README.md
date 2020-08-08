@@ -12,6 +12,8 @@ $ pip install climmands
 
 ## Example
 ```python
+#!/usr/bin/env python
+
 import argparse
 import climmands
 
@@ -27,18 +29,18 @@ class AddTwoNumbersCommand(climmands.Command):
 	description = 'Add two numbers and print result'
 
 	def initialize_arguments_parser(self, parser):
-		parser.add_argument('first', 'First number')
-		parser.add_argument('second', 'Second number')
+		parser.add_argument('first', help='First number')
+		parser.add_argument('second', help='Second number')
 
 	def execute(self, parsed_arguments):
-		first = parsed_arguments.first
-		second = parsed_arguments.second
+		first = int(parsed_arguments.first)
+		second = int(parsed_arguments.second)
 		result = first + second
 
 		print(f'{first} + {second} = {result}')
 
 def main():
-	parser = argparse.ArgumentsParser(description='My great command')
+	parser = argparse.ArgumentParser(description='My great command')
 	commands = climmands.CommandLoader(parser).load_commands()
 	executor = climmands.CommandExecutor(commands)
 
@@ -48,5 +50,6 @@ def main():
 
 if __name__ == '__main__':
 	main()
+
 ```
 
