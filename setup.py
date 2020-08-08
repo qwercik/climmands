@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
 	name='climmands',
-	version='0.0.1',
+	version='0.0.2',
 	author='Eryk Andrzejewski',
 	author_email='erykandrzejewski@gmail.com',
 	description='A small cli command helper package',
